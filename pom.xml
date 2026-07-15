@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
          https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <modelVersion>4.0.1</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
     <groupId>in.netflix</groupId>
     <artifactId>NETFLIX</artifactId>
-    <version>1.2.2</version>
+    <version>1.2.3</version>
     <packaging>war</packaging>
 
     <name>NETFLIX</name>
