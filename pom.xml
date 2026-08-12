@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
@@ -5,6 +7,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- Project Information -->
     <groupId>in.netflix</groupId>
     <artifactId>NETFLIX-1</artifactId>
     <version>1.2.2</version>
@@ -13,6 +16,7 @@
     <name>NETFLIX</name>
     <description>Netflix Java Web Application</description>
 
+    <!-- Java Configuration -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -20,6 +24,7 @@
         <failOnMissingWebXml>false</failOnMissingWebXml>
     </properties>
 
+    <!-- Dependencies -->
     <dependencies>
 
         <!-- JUnit -->
@@ -38,7 +43,7 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- Bedrock -->
+        <!-- Oracle Bedrock -->
         <dependency>
             <groupId>com.oracle.bedrock</groupId>
             <artifactId>bedrock-runtime-maven</artifactId>
@@ -47,22 +52,28 @@
 
     </dependencies>
 
+    <!-- Nexus Repository -->
     <distributionManagement>
 
         <snapshotRepository>
             <id>nexusRepo</id>
-            <url>http://13.233.230.166:8081/repository/maven-snapshots/</url>
+            <url>http://54.236.143.24:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
 
         <repository>
             <id>nexusRepo</id>
-            <url>http://13.233.230.166:8081/repository/maven-releases/</url>
+            <url>http://54.236.143.24:8081/repository/maven-releases/</url>
         </repository>
 
     </distributionManagement>
 
+    <!-- Build Configuration -->
     <build>
 
+        <!-- IMPORTANT:
+             Maven will generate:
+             target/NETFLIX.war
+        -->
         <finalName>NETFLIX</finalName>
 
         <plugins>
@@ -78,7 +89,7 @@
                 </configuration>
             </plugin>
 
-            <!-- WAR Plugin -->
+            <!-- Maven WAR Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -88,28 +99,28 @@
                 </configuration>
             </plugin>
 
-            <!-- Surefire Plugin -->
+            <!-- Maven Surefire Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
             </plugin>
 
-            <!-- Clean Plugin -->
+            <!-- Maven Clean Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-clean-plugin</artifactId>
                 <version>3.4.0</version>
             </plugin>
 
-            <!-- Install Plugin -->
+            <!-- Maven Install Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-install-plugin</artifactId>
                 <version>3.1.2</version>
             </plugin>
 
-            <!-- Deploy Plugin -->
+            <!-- Maven Deploy Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-deploy-plugin</artifactId>
